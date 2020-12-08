@@ -1,0 +1,10 @@
+BEGIN TRY
+    BEGIN TRANSACTION 
+         --yourcode
+    COMMIT
+END TRY
+BEGIN CATCH
+    IF @@TRANCOUNT > 0
+        ROLLBACK
+END CATCH
+
